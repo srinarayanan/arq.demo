@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.exp</groupId>
+	<artifactId>arq.test</artifactId>
+	<packaging>war</packaging>
+	<name>arq.test</name>
+	<version>1.0-SNAPSHOT</version>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+
+		<arquillian.version>1.0.0.Alpha5</arquillian.version>
+
+	</properties>
+
+
+	<repositories>
+		<repository>
+			<id>jboss</id>
+			<url>http://repository.jboss.org/maven2/</url>
+		</repository>
+	</repositories>
+	<dependencies>
+
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.arquillian</groupId>
+			<artifactId>arquillian-junit</artifactId>
+			<version>1.0.0.Alpha5</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>inject-api</artifactId>
+			<version>1.0.0-PRD</version>
+		</dependency>
+		<!-- Other dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>arq.test</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<!-- version 2.1-alpha-2 introduces the failOnMissingWebXml flag -->
+				<version>2.1-beta-1</version>
+				<configuration>
+					<warName>arq.test-1.0-SNAPSHOT</warName>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<version>2.7</version>
+					<configuration>
+						<!-- aligned with Using maven-eclipse-plugin in multi-module projects 
+							with WTP -->
+						<!-- http://maven.apache.org/plugins/maven-eclipse-plugin/examples/multi-module-projects.html -->
+						<projectNameTemplate>[artifactId]</projectNameTemplate>
+						<wtpmanifest>true</wtpmanifest>
+						<downloadSources>false</downloadSources>
+						<downloadJavadocs>true</downloadJavadocs>
+						<wtpapplicationxml>true</wtpapplicationxml>
+						<wtpversion>2.0</wtpversion>
+					</configuration>
+					<executions>
+						<execution>
+							<phase>clean</phase>
+							<id>clean</id>
+							<goals>
+								<goal>clean</goal>
+							</goals>
+						</execution>
+						<execution>
+							<phase>generate-resources</phase>
+							<id>generate-resources</id>
+							<goals>
+								<goal>eclipse</goal>
+							</goals>
+						</execution>
+						<execution>
+							<phase>install</phase>
+							<id>install</id>
+							<goals>
+								<goal>eclipse</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.5</source>
+						<target>1.5</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<profiles>
+
+		<profile>
+
+			<id>jbossas6</id>
+			<dependencies>
+				<dependency>
+					<groupId>org.jboss.arquillian.container</groupId>
+					<artifactId>arquillian-jbossas-remote-6</artifactId>
+					<version>1.0.0.Alpha5</version>
+				</dependency>
+				<dependency>
+					<groupId>org.jboss.jbossas</groupId>
+					<artifactId>jboss-as-profileservice-client</artifactId>
+					<version>6.0.0.Final</version>
+					<type>pom</type>
+				</dependency>
+
+			</dependencies>
+		</profile>
+
+	</profiles>
+
+
+	<!-- <profiles> <profile> <id>jbossas-remote-6</id> <dependencies> <dependency> 
+		<groupId>org.jboss.arquillian.container</groupId> <artifactId>arquillian-jbossas-remote-6</artifactId> 
+		<version>1.0.0.Alpha5</version> </dependency> <dependency> <groupId>org.jboss.jbossas</groupId> 
+		<artifactId>jboss-as-client</artifactId> <version>6.0.0.Final</version> <type>pom</type> 
+		</dependency> </dependencies> </profile> </profiles> -->
+</project>
