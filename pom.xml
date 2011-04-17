@@ -139,7 +139,22 @@
 
 			</dependencies>
 		</profile>
-
+		<profile>
+			<id>jbossas-remote-5.1</id>
+			<dependencies>
+				<dependency>
+					<groupId>org.jboss.arquillian.container</groupId>
+					<artifactId>arquillian-jbossas-remote-5.1</artifactId>
+					<version>1.0.0.Alpha5</version>
+				</dependency>
+				<dependency>
+					<groupId>org.jboss.jbossas</groupId>
+					<artifactId>jboss-as-client</artifactId>
+					<version>5.1.0.GA</version>
+					<type>pom</type>
+				</dependency>
+			</dependencies>
+		</profile>
 	</profiles>
 
 
