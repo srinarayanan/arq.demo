@@ -13,6 +13,7 @@
 	<properties>
 
 		<arquillian.version>1.0.0.Alpha5</arquillian.version>
+		<version.org.jboss.shrinkwrap>1.0.0-alpha-7</version.org.jboss.shrinkwrap>
 
 	</properties>
 
@@ -23,6 +24,7 @@
 			<url>http://repository.jboss.org/maven2/</url>
 		</repository>
 	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>javax.ejb</groupId>
@@ -56,6 +58,20 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>sip-api</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<!-- shrink -->
+		<dependency>
+			<groupId>org.jboss.shrinkwrap</groupId>
+			<artifactId>shrinkwrap-extension-mobicents-sip-servlets-1x</artifactId>
+			<version>1.0.0-alpha-13-SNAPSHOT</version>
+		</dependency>
+
+
+
 	</dependencies>
 
 	<build>

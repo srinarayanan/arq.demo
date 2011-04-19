@@ -1,0 +1,13 @@
+<sip-app xmlns="http://www.jcp.org/xml/ns/sipservlet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.jcp.org/xml/ns/sipservlet http://www.jcp.org/xml/ns/sipservlet/sip-app_1_1.xsd"
+        xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        version="1.1">
+  <app-name>ArquillianMobicentsSipServletsTestApplication</app-name> 
+
+  
+  <servlet>
+    <javaee:servlet-name>TestSipServlet</javaee:servlet-name>
+    <javaee:servlet-class>org.jboss.arquillian.container.mobicents.servlet.sip.embedded_1.TestSipServlet</javaee:servlet-class>
+   
+  </servlet>
+</sip-app>
