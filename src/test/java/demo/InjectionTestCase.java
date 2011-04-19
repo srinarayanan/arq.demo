@@ -45,7 +45,7 @@ public class InjectionTestCase {
 
       String userName = "Earthlings";
 
-      Assert.assertEquals("Hello " + userName, greetingManager.greet(userName));
+      Assert.assertEquals("Hello" + userName, greetingManager.greet(userName));
 
    }
 
