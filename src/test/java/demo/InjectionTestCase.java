@@ -15,6 +15,9 @@ import org.junit.Test;
 
 import org.junit.runner.RunWith;
 
+import com.exp.GreetingManager;
+import com.exp.GreetingManagerBean;
+
 
 @RunWith(Arquillian.class)
 
