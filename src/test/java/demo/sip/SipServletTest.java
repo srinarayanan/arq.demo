@@ -6,6 +6,7 @@ import org.jboss.arquillian.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.sip.api.spec.ConvergedSipWebArchive;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
